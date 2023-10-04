@@ -1,0 +1,40 @@
+<html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<script>
+    function tabuada() {
+        var num = parseInt(document.getElementById("txtValorA").value);
+        var resposta = document.getElementById('resposta');
+        var tabuada = '';
+
+        for (var count = 1; count <= 10; count++) {
+            tabuada += num + " x " + count + " = " +
+                num * count + "<br />";
+        }
+        resposta.innerHTML = tabuada;
+    }
+
+    function click_limpar() {
+        document.getElementById("txtValorA").value = "";
+    }
+</script>
+
+<body>
+    <div class="form">
+        <h1>Tabuada</h1>
+        <label for="txtValorA">Informe o valor de A:</label><br>
+        <input id="txtValorA" type="number"> <br />
+        <button onclick="tabuada()">Exibir</button><br />
+        <input type="button" value="Limpar" onclick="click_limpar();">
+        <p>Tabuada:</p>
+        <div id='resposta' style='display:inline'></div>
+    </div>
+</body>
+
+</html>
